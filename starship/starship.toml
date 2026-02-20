@@ -38,24 +38,29 @@ style = "bold #9d7cd8"
 [git_status]
 style = "bold #e0af68"
 format = "([$all_status$ahead_behind]($style)) "
-conflicted = "⚔️ "
-ahead = "🏎️ 💨 ×${count} "
-behind = "🐢 ×${count} "
-untracked = "🛤️  ×${count} "
-modified = "📝 ×${count} "
-staged = "🗃️  ×${count} "
+conflicted = "[󰞇 ](bold #f7768e)"
+ahead = "[󰶣 ${count}](bold #b4f9f8)"
+behind = "[󰶡 ${count}](bold #ff9e64)"
+untracked = "[󰋖 ${count}](bold #9ece6a)"
+modified = "[󰏫 ${count}](bold #e0af68)"
+staged = "[󰐗 ${count}](bold #73daca)"
+renamed = "[󰕍 ${count}](bold #bb9af7)"
+deleted = "[󰆴 ${count}](bold #f7768e)"
 
 [battery]
-full_symbol = "󰁹 "          
-charging_symbol = "󱐋 "      
-discharging_symbol = "󱘖 " 
+full_symbol = "󰁹 "
+charging_symbol = "󱐋 "
+discharging_symbol = "󱘖 "
 format = "[$symbol$percentage]($style) "
+
 [[battery.display]]
 threshold = 15
 style = "bold #f7768e"
+
 [[battery.display]]
 threshold = 85
 style = "bold #e0af68"
+
 [[battery.display]]
 threshold = 100
 style = "bold #9ece6a"
