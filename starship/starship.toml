@@ -1,0 +1,86 @@
+format = """
+$username\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$fill\
+$python\
+$rust\
+$nodejs\
+$julia\
+$battery\
+$cmd_duration\n\
+$character"""
+
+[fill]
+symbol = " "
+
+[username]
+show_always = true
+style_user = "bold #bb9af7"
+format = "[󰣇 ](bold #7aa2f7)[$user]($style) in "
+
+[character]
+success_symbol = "[➜](bold #c0caf5) "
+error_symbol = "[✖](bold #f7768e) "
+
+[directory]
+truncation_length = 5
+format = "[$path]($style)[$lock_symbol]($lock_style) "
+style = "bold #7aa2f7"
+
+[git_branch]
+format = "on [$symbol$branch]($style) "
+symbol = " "
+style = "bold #9d7cd8"
+
+[git_status]
+style = "bold #e0af68"
+format = "([$all_status$ahead_behind]($style)) "
+conflicted = "⚔️ "
+ahead = "🏎️ 💨 ×${count} "
+behind = "🐢 ×${count} "
+untracked = "🛤️  ×${count} "
+modified = "📝 ×${count} "
+staged = "🗃️  ×${count} "
+
+[battery]
+full_symbol = "󰁹 "          
+charging_symbol = "󱐋 "      
+discharging_symbol = "󱘖 " 
+format = "[$symbol$percentage]($style) "
+[[battery.display]]
+threshold = 15
+style = "bold #f7768e"
+[[battery.display]]
+threshold = 85
+style = "bold #e0af68"
+[[battery.display]]
+threshold = 100
+style = "bold #9ece6a"
+
+[python]
+symbol = " "
+format = "[$symbol$version]($style) "
+style = "bold #73daca"
+
+[rust]
+symbol = " "
+format = "[$symbol$version]($style) "
+style = "bold #ff9e64"
+
+[nodejs]
+symbol = "󰎙 "
+format = "[$symbol$version]($style) "
+style = "bold #7db9e8"
+
+[julia]
+symbol = " "
+format = "[$symbol$version]($style) "
+style = "bold #73daca"
+
+[cmd_duration]
+min_time = 500
+format = "took [$duration]($style) "
+style = "bold #9ece6a"
